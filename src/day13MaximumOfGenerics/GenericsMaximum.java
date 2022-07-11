@@ -18,7 +18,7 @@ public class GenericsMaximum {
 	 * @return returning the result which is maximum
 	 */
 
-	public static int findMax(Integer x, Integer y, Integer z) {
+	public static int maximum(Integer x, Integer y, Integer z) {
 		Integer max = x;
 		if (y.compareTo(max) > 0 && y.compareTo(z) > 0)
 			max = y;
@@ -33,7 +33,6 @@ public class GenericsMaximum {
 		Integer x = scanner.nextInt();
 		Integer y = scanner.nextInt();
 		Integer z = scanner.nextInt();
-		// findMax(x,y,z);
-		System.out.println("Max: " + findMax(x, y, z));
+		System.out.println("Max: " + maximum(x, y, z));
 	}
 }
