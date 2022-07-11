@@ -1,39 +1,32 @@
 package day13MaximumOfGenerics;
 
-import java.util.Scanner;
-
 /**
  * 
  * @author LENOVO
  *
  */
 
-public class GenericsMaximum {
+public class GenericsMaximum<T extends Comparable<T>> {
 
-	static Scanner scanner = new Scanner(System.in);
+	public static <T extends Comparable<T>> T toPrintMax(T x, T y, T z) {
 
-	/**
-	 * 
-	 * @param x taking first value
-	 * @param y taking second value
-	 * @param z taking third value
-	 * @return returning the result which is maximum
-	 */
+		/**
+		 * 
+		 * @param x taking first value
+		 * @param y taking second value
+		 * @param z taking third value
+		 * @return returning the result which is maximum
+		 */
 
-	private static String findStringMax(String str1, String str2, String str3) {
-		String max = str1;
-		if (str2.compareTo(max) > 0)
-			max = str2;
-		if (str3.compareTo(max) > 0)
-			max = str3;
+		T max = x;
+
+		if (y.compareTo(max) > 0 && y.compareTo(z) > 0) {
+			max = y;
+		}
+
+		if (z.compareTo(max) > 0) {
+			max = z;
+		}
 		return max;
-	}
-
-	public static void main(String[] args) {
-		System.out.println("Enter 3 Strings");
-		String str1 = scanner.next();
-		String str2 = scanner.next();
-		String str3 = scanner.next();
-		System.out.println("Max: " + findStringMax(str1, str2, str3));
 	}
 }
