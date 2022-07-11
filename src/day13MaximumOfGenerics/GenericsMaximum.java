@@ -1,6 +1,7 @@
 package day13MaximumOfGenerics;
 
 import java.util.Scanner;
+
 /**
  * 
  * @author LENOVO
@@ -10,6 +11,7 @@ import java.util.Scanner;
 public class GenericsMaximum {
 
 	static Scanner scanner = new Scanner(System.in);
+
 	/**
 	 * 
 	 * @param x taking first value
@@ -18,21 +20,21 @@ public class GenericsMaximum {
 	 * @return returning the result which is maximum
 	 */
 
-	public static int maximum(Integer x, Integer y, Integer z) {
-		Integer max = x;
-		if (y.compareTo(max) > 0 && y.compareTo(z) > 0)
-			max = y;
-		else if (z.compareTo(max) > 0)
-			max = z;
+	private static Float maxfloat(Float a, Float b, Float c) {
+		Float max = a;
+		if (b.compareTo(max) > 0 && b.compareTo(c) > 0)
+			max = b;
+		if (c.compareTo(max) > 0)
+			max = c;
 		return max;
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Finding the Maximum number from given numbers:");
-		System.out.println("Enter 3 numbers: ");
-		Integer x = scanner.nextInt();
-		Integer y = scanner.nextInt();
-		Integer z = scanner.nextInt();
-		System.out.println("Max: " + maximum(x, y, z));
+		System.out.println("Enter 3 Floating point numbers");
+		Float a = scanner.nextFloat();
+		Float b = scanner.nextFloat();
+		Float c = scanner.nextFloat();
+		System.out.println("Max: " + maxfloat(a, b, c));
+
 	}
 }
