@@ -20,21 +20,20 @@ public class GenericsMaximum {
 	 * @return returning the result which is maximum
 	 */
 
-	private static Float maxfloat(Float a, Float b, Float c) {
-		Float max = a;
-		if (b.compareTo(max) > 0 && b.compareTo(c) > 0)
-			max = b;
-		if (c.compareTo(max) > 0)
-			max = c;
+	private static String findStringMax(String str1, String str2, String str3) {
+		String max = str1;
+		if (str2.compareTo(max) > 0)
+			max = str2;
+		if (str3.compareTo(max) > 0)
+			max = str3;
 		return max;
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Enter 3 Floating point numbers");
-		Float a = scanner.nextFloat();
-		Float b = scanner.nextFloat();
-		Float c = scanner.nextFloat();
-		System.out.println("Max: " + maxfloat(a, b, c));
-
+		System.out.println("Enter 3 Strings");
+		String str1 = scanner.next();
+		String str2 = scanner.next();
+		String str3 = scanner.next();
+		System.out.println("Max: " + findStringMax(str1, str2, str3));
 	}
 }
