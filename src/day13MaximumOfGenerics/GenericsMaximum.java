@@ -1,40 +1,46 @@
 package day13MaximumOfGenerics;
 
 import java.util.Scanner;
-/**
- * 
- * @author LENOVO
- *
- */
 
-public class GenericsMaximum {
+public class GenericsMaximum<T extends Comparable<T>> {
 
-	static Scanner sc = new Scanner(System.in);
+	public T x, y, z;
+	static Scanner scanner = new Scanner(System.in);
 
-	public static int maximum(Integer a, Integer b, Integer c) {
-		/**
-	     * This method compare numbers and print the results
-	     * @return - returning result of the operation
-	     */
-		Integer max = a;
-		if (b.compareTo(max) > 0 && b.compareTo(c) > 0)
-			max = b;
-		else if (c.compareTo(max) > 0)
-			max = c;
-		return max;
+	/**
+	 * @param x
+	 * @param y
+	 * @param z
+	 */
+	public GenericsMaximum(T x, T y, T z) {
+		super();
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 
-	public static void main(String[] args) {
-		 /*
-         * Taking 3 numbers from user
-         * Printing which is bigger
-         */
-		
-		System.out.println("<< Finding the Maximum of given 3 numbers >>");
-		System.out.println("Enter 3 numbers ");
-		Integer x = sc.nextInt();
-		Integer y = sc.nextInt();
-		Integer z = sc.nextInt();
-		System.out.println("Maximum is -> " + maximum(x, y, z));
+	public T maximum() {
+		return GenericsMaximum.maximum(x, y, z);
 	}
+
+	public static <T extends Comparable<T>> T maximum(T x, T y, T z) {
+
+		T max = x; // assume x is initially the largest
+		if (y.compareTo(max) > 0 && y.compareTo(z) > 0)
+			max = y; // y is the largest
+		if (z.compareTo(max) > 0)
+			max = z; // z is the largest
+		return max; // returns the largest object
+	}
+
+	public static void main(String args[]) {
+		System.out.println("Finding the Maximum number from given numbers:");
+		System.out.println("Enter 3 Integer numbers: ");
+		Integer x = scanner.nextInt();
+		Integer y = scanner.nextInt();
+		Integer z = scanner.nextInt();
+		System.out.println("Maximum is  " + maximum(x, y, z));
+		scanner.close();
+	}
+
 }
